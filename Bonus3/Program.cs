@@ -10,34 +10,34 @@ namespace Bonus3
     {
         static void Main(string[] args)
         {
-            Boolean safe = false;
-            Boolean check = false;
             Random rnd = new Random();
             int answer = rnd.Next(1, 100);
-            do
+            int guess = GetAndConvertInputToInt();
+        }
+        public static int GetAndConvertInputToInt()
+        {
+            string input;
+            int convertedString;
+            while (true)
             {
-                int n;
-                while (safe == false)
+                Console.WriteLine();
+                Console.Write("Guess a number between 1 and 100 ");
+                input = Console.ReadLine();
+                try
                 {
-                    Console.WriteLine("Guess a number 1-100");
-                    string input = Console.ReadLine();
-                    safe = int.TryParse(input, out n);
+                    convertedString = Convert.ToInt32(input);
+                    if (convertedString > 100 || convertedString < 0)
+                    {
+                        Console.WriteLine("A number you entered was a invalid number, please try again");
+                        convertedString = 1;
+                    }
+                    return convertedString;
                 }
-                int guess = int.Parse(input);
-
-
-
-
-                int status = 1;
-                switch (status)
+                catch
                 {
-                    case 1:
-
-                        break;
-                    case 2:
-                        break;
+                    Console.WriteLine("A number you entered was a invalid number, please try again.");
                 }
-            } while (check == false);
+            }
         }
 
         public static Boolean CheckGuess(int guess, int num)
