@@ -1,1 +1,2 @@
 c:\users\tkat\documents\visual studio 2015\Projects\Bonus3\Bonus3\bin\Debug\Bonus3.exe.config
+C:\Users\Thomas\Desktop\Programming\Version-Control\Lab03\Bonus03\Bonus3\bin\Debug\Bonus3.exe.config
