@@ -10,19 +10,35 @@ namespace Bonus3
     {
         static void Main(string[] args)
         {
-            Boolean safe = true;
-            Boolean check = false;
             Random rnd = new Random();
             int answer = rnd.Next(1, 100);
-            do
+            int guess = GetAndConvertInputToInt();
+        }
+        public static int GetAndConvertInputToInt()
+        {
+            string input;
+            int convertedString;
+            while (true)
             {
-                int n;
-                Console.WriteLine("Guess a number 1-100");
-                string input = Console.ReadLine();
-                safe = int.TryParse(input, out n);
-                while (safe == true);
-                int guess = int.Parse(input);
-            } while (check == false);
+                Console.WriteLine();
+                Console.Write("Guess a number between 1 and 100 ");
+                input = Console.ReadLine();
+                try
+                {
+                    convertedString = Convert.ToInt32(input);
+                    if (convertedString > 100 || convertedString < 0)
+                    {
+                        Console.WriteLine("A number you entered was a invalid number, please try again");
+                        convertedString = 1;
+                    }
+                    return convertedString;
+                }
+                catch
+                {
+                    Console.WriteLine("A number you entered was a invalid number, please try again.");
+                }
+            }
+
         }
     }
 }
